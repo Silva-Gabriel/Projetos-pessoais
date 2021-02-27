@@ -118,7 +118,7 @@
             color:white;
             font-family:cursive;
             font-size:14px;
-            padding-top:500px
+            padding-top:500px;
           }
           img.tm{
             position:relative;
