@@ -142,25 +142,20 @@
 
           h1{
 
-                display:inline-block;
-                top:20px;
+            display:inline-block;
+            top:20px;
           }
           img.subt{
             position:relative;
-            left:110pt;
+            left:120pt;
             top:80pt;
             width:100%;
-            max-width:300pt;
+            max-width:260pt;
             height:100%;
-            max-height:250px;
-            background-size:100% auto;
+            max-height:220px;
+            background-size:auto;
           }
-
-
-          
-
-            
-                </style>
+          </style>
     
          </head>
     <body>
