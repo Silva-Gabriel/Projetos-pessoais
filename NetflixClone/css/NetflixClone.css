@@ -1,0 +1,46 @@
+:root
+{
+    --vermelho:#E50914;
+    --preto:#141414;
+}
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    background-color:var(--preto);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:white;
+}
+
+header .container
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo
+{
+    color:var(--vermelho);
+    font-family:fantasy;
+    font-style:italic;
+    font-size: 28px;
+}
+
+header nav a
+{
+    text-decoration: none;
+    color:#AAA;
+    margin-right:12px;
+}
+
+header nav a:hover
+{
+    color:#fff;
+}
+
