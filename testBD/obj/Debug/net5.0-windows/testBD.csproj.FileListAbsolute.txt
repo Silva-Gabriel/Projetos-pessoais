@@ -1,0 +1,16 @@
+C:\WorkSpace\Projetos-pessoais\testBD\obj\Debug\net5.0-windows\testBD.csprojAssemblyReference.cache
+C:\WorkSpace\Projetos-pessoais\testBD\obj\Debug\net5.0-windows\testBD.GeneratedMSBuildEditorConfig.editorconfig
+C:\WorkSpace\Projetos-pessoais\testBD\obj\Debug\net5.0-windows\testBD.AssemblyInfoInputs.cache
+C:\WorkSpace\Projetos-pessoais\testBD\obj\Debug\net5.0-windows\testBD.AssemblyInfo.cs
+C:\WorkSpace\Projetos-pessoais\testBD\obj\Debug\net5.0-windows\testBD.csproj.CoreCompileInputs.cache
+C:\WorkSpace\Projetos-pessoais\testBD\bin\Debug\net5.0-windows\testBD.exe
+C:\WorkSpace\Projetos-pessoais\testBD\bin\Debug\net5.0-windows\testBD.deps.json
+C:\WorkSpace\Projetos-pessoais\testBD\bin\Debug\net5.0-windows\testBD.runtimeconfig.json
+C:\WorkSpace\Projetos-pessoais\testBD\bin\Debug\net5.0-windows\testBD.runtimeconfig.dev.json
+C:\WorkSpace\Projetos-pessoais\testBD\bin\Debug\net5.0-windows\testBD.dll
+C:\WorkSpace\Projetos-pessoais\testBD\bin\Debug\net5.0-windows\ref\testBD.dll
+C:\WorkSpace\Projetos-pessoais\testBD\bin\Debug\net5.0-windows\testBD.pdb
+C:\WorkSpace\Projetos-pessoais\testBD\obj\Debug\net5.0-windows\testBD.dll
+C:\WorkSpace\Projetos-pessoais\testBD\obj\Debug\net5.0-windows\ref\testBD.dll
+C:\WorkSpace\Projetos-pessoais\testBD\obj\Debug\net5.0-windows\testBD.pdb
+C:\WorkSpace\Projetos-pessoais\testBD\obj\Debug\net5.0-windows\testBD.genruntimeconfig.cache
