@@ -282,7 +282,7 @@ namespace ProjetoLogin
             this.Controls.Add(this.lblCadastro);
             this.DoubleBuffered = true;
             this.Name = "TelaCadastro";
-            this.Text = "Cadastro";
+            this.Text = "Tela de Cadastro";
             this.ResumeLayout(false);
             this.PerformLayout();
 

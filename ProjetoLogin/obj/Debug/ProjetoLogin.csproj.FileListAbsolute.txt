@@ -9,3 +9,4 @@ C:\WorkSpace\Projetos-pessoais\ProjetoLogin\obj\Debug\ProjetoLogin.exe
 C:\WorkSpace\Projetos-pessoais\ProjetoLogin\obj\Debug\ProjetoLogin.pdb
 C:\WorkSpace\Projetos-pessoais\ProjetoLogin\obj\Debug\ProjetoLogin.TelaLogin.resources
 C:\WorkSpace\Projetos-pessoais\ProjetoLogin\obj\Debug\ProjetoLogin.TelaCadastro.resources
+C:\WorkSpace\Projetos-pessoais\ProjetoLogin\obj\Debug\ProjetoLogin.InterfaceADM.resources

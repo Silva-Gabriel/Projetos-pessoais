@@ -96,7 +96,7 @@ namespace ProjetoLogin
                     }
                     escreveEmails.Close();
 
-                    StreamWriter escreveSenhas = new StreamWriter(@"C:\WorkSpace\Projetos-pessoais\ProjetoLogin\BDtxt\ADM\SenhasADM.txt", true);
+                    StreamWriter escreveSenhas = new StreamWriter(@"C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/ADM/SenhasADM.txt", true);
                     try
                     {
                         txtSenha.PasswordChar = '\u0000';
@@ -141,10 +141,9 @@ namespace ProjetoLogin
                     }
                     escreveEmails.Close();
 
-                    StreamWriter escreveSenhas = new StreamWriter(@"C:\WorkSpace\Projetos-pessoais\ProjetoLogin\BDtxt\Comum\SenhasComum.txt", true);
+                    StreamWriter escreveSenhas = new StreamWriter(@"C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/ComumSenhasComum.txt", true);
                     try
                     {
-                        
                         txtSenha.PasswordChar = '\u0000'; //Retira o passwordChar '*' para mostrar a senha no banco de dados txt
                         escreveSenhas.WriteLine($"{txtSenha.Text}");
                         escreveSenhas.Close();
@@ -155,7 +154,7 @@ namespace ProjetoLogin
                     }
                     escreveSenhas.Close();
 
-                    StreamWriter escreveNomeCompleto = new StreamWriter(@"C:\WorkSpace\Projetos-pessoais\ProjetoLogin\BDtxt\Comum\NomesComum.txt", true);
+                    StreamWriter escreveNomeCompleto = new StreamWriter(@"C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/Comum/NomesComum.txt", true);
                     try
                     {
                         escreveNomeCompleto.WriteLine($"{txtNome.Text} {txtSobrenome.Text}");

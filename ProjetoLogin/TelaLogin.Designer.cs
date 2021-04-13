@@ -116,6 +116,7 @@ namespace ProjetoLogin
             this.BotaoAutenticar.TabIndex = 2;
             this.BotaoAutenticar.Text = "Entrar";
             this.BotaoAutenticar.UseVisualStyleBackColor = false;
+            this.BotaoAutenticar.Click += new System.EventHandler(this.BotaoAutenticar_Click);
             // 
             // panelCriarConta
             // 
