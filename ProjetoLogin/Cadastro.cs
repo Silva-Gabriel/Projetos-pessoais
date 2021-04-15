@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Runtime.InteropServices;
 
 namespace ProjetoLogin
 {
@@ -16,7 +17,34 @@ namespace ProjetoLogin
         public TelaCadastro()
         {
             InitializeComponent();
+            List<TextBox> tList = new List<TextBox>();
+            List<string> sList = new List<string>();
+            tList.Add(txtNome);
+            tList.Add(txtSobrenome);
+            tList.Add(txtEmail);
+            tList.Add(txtSenha);
+            tList.Add(txtGeneroPerso);
+            sList.Add("Seu nome");
+            sList.Add("Sobrenome");
+            sList.Add("Email");
+            sList.Add("Senha");
+            sList.Add("Genero personalizado");
+            SetCueBanner(ref tList, sList);
         }
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]
+        private static extern IntPtr SendMessage(IntPtr hWnd, uint msg, IntPtr i, string str);
+
+        void SetCueBanner(ref List<TextBox> textBox, List<string> CueText)
+        {
+            for (int i = 0; i < textBox.Count; i++)
+            {
+                SendMessage(textBox[i].Handle, 0x1501, (IntPtr)1, CueText[i]);
+            }
+        }
+
+
+        TelaLogin AbreTelaLogin = new TelaLogin();
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
@@ -25,6 +53,13 @@ namespace ProjetoLogin
         string Usuario = "";
         private void BotaoCadastrar_Click(object sender, EventArgs e)
         {
+            var lerLinhasEmailComum = File.ReadAllLines("C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/Comum/EmailsComum.txt");
+            var lerLinhasEmailADM = File.ReadAllLines("C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/ADM/EmailsADM.txt");
+            var lerSenhasComum = File.ReadAllLines("C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/Comum/SenhasComum.txt");
+            var lerSenhasADM = File.ReadAllLines("C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/ADM/SenhasADM.txt");
+            var lerNomesComum = File.ReadAllLines("C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/ADM/NomesADM.txt");
+            var lerNomesADM = File.ReadAllLines("C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/Comum/NomesComum.txt");
+
             //Avisos de campos não preenchidos
             if (txtNome.Text == "")
             {
@@ -43,9 +78,9 @@ namespace ProjetoLogin
                 MessageBox.Show("O campo 'Senha' precisa ser preenchido!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
-            if (txtCodigoADM.Text == "") 
+            if (txtCodigoADM.Text == "")
             {
-                MessageBox.Show("O código de administrador deve ser preenchido,se você não for um insira 0 como valor padrão","Aviso!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("O código de administrador deve ser preenchido,se você não for um insira 0 como valor padrão", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             if (txtCodigoADM.Text != "" && txtEmail.Text != "" && txtNome.Text != "" && txtSenha.Text != "" && txtSobrenome.Text != "")
             {
@@ -76,103 +111,126 @@ namespace ProjetoLogin
                 if (txtCodigoADM.Text == "1135813")
                 {
                     Usuario = "ADM";
+                    this.NivelAcesso = Usuario;
                 }
                 else
                 {
                     Usuario = "Comum";
+                    this.NivelAcesso = Usuario;
                 }
 
                 //Instanciando as classes StreamWrite para a escrita em txt e StreamReader para a leitura dos arquivos >> Início do armazenamento usuário administrador
+
                 if (Usuario == "ADM")
                 {
-                    StreamWriter escreveEmails = new StreamWriter(@"C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/ADM/EmailsADM.txt", true);
-                    try
+                    if (!(lerLinhasEmailADM.Contains(txtEmail.Text)) && !(lerLinhasEmailADM.Contains(txtEmail.Text)))
                     {
-                        escreveEmails.WriteLine($"{txtEmail.Text}");
-                    }
-                    catch
-                    {
-                        throw new ArgumentOutOfRangeException();
-                    }
-                    escreveEmails.Close();
+                        StreamWriter escreveEmailsADM = new StreamWriter(@"C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/ADM/EmailsADM.txt", true);
+                        try
+                        {
+                          escreveEmailsADM.WriteLine($"{txtEmail.Text}");
+                        }
+                        catch
+                        {
+                            throw new ArgumentOutOfRangeException();
+                        }
+                        escreveEmailsADM.Close();
 
-                    StreamWriter escreveSenhas = new StreamWriter(@"C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/ADM/SenhasADM.txt", true);
-                    try
-                    {
-                        txtSenha.PasswordChar = '\u0000';
-                        escreveSenhas.WriteLine($"{txtSenha.Text}");
-                        escreveSenhas.Close();
-                    }
-                    catch
-                    {
-                        throw new ArgumentOutOfRangeException();
-                    }
-                    escreveSenhas.Close();
+                        StreamWriter escreveSenhasADM = new StreamWriter(@"C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/ADM/SenhasADM.txt", true);
+                        try
+                        {
+                            escreveSenhasADM.WriteLine($"{txtSenha.Text}");
+                        }
 
-                    StreamWriter escreveNomeCompleto = new StreamWriter(@"C:\WorkSpace\Projetos-pessoais\ProjetoLogin\BDtxt\ADM\NomesADM.txt", true);
-                    try
-                    {
-                        escreveNomeCompleto.WriteLine($"{txtNome.Text} {txtSobrenome.Text}");
-                    }
-                    catch
-                    {
-                        throw new ArgumentOutOfRangeException();
-                    }
-                    escreveNomeCompleto.Close();
+                        catch
+                        {
+                            throw new ArgumentOutOfRangeException();
+                        }
+                        escreveSenhasADM.Close();
 
-                    //Termina o cadastro e volta para a tela inicial
-                    MessageBox.Show("Cadastro efetuado com Sucesso");
-                    this.Close();
-                    TelaLogin AbreTelaLogin = new TelaLogin();
-                    AbreTelaLogin.Show();
+                        StreamWriter escreveNomeCompletoADM = new StreamWriter(@"C:\WorkSpace\Projetos-pessoais\ProjetoLogin\BDtxt\ADM\NomesADM.txt", true);
+                        try
+                        {
+                            escreveNomeCompletoADM.WriteLine($"{txtNome.Text} {txtSobrenome.Text}");
+                        }
+                        catch
+                        {
+                            throw new ArgumentOutOfRangeException();
+                        }
+                        escreveNomeCompletoADM.Close();
 
+                        MessageBox.Show("Cadastro efetuado com Sucesso", "Muito bem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                        AbreTelaLogin.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Email já cadastrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 //Instanciando as classes StreamWrite para a escrita em txt e StreamReader para a leitura dos arquivos >> Início do armazenamento usuário comum
                 else if (Usuario == "Comum")
                 {
-                    StreamWriter escreveEmails = new StreamWriter(@"C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/Comum/EmailsComum.txt", true);
-                    try
+                    if (!(lerLinhasEmailComum.Contains(txtEmail.Text)) && !(lerLinhasEmailADM.Contains(txtEmail.Text)))
                     {
-                        escreveEmails.WriteLine($"{txtEmail.Text}");
-                    }
-                    catch
-                    {
-                        throw new ArgumentOutOfRangeException();
-                    }
-                    escreveEmails.Close();
+                        StreamWriter escreveEmailsComum = new StreamWriter(@"C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/Comum/EmailsComum.txt", true);
+                        try
+                        {
+                            escreveEmailsComum.WriteLine($"{txtEmail.Text}");
+                        }
+                        catch
+                        {
+                            throw new ArgumentOutOfRangeException();
+                        }
+                        escreveEmailsComum.Close();
 
-                    StreamWriter escreveSenhas = new StreamWriter(@"C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/ComumSenhasComum.txt", true);
-                    try
-                    {
-                        txtSenha.PasswordChar = '\u0000'; //Retira o passwordChar '*' para mostrar a senha no banco de dados txt
-                        escreveSenhas.WriteLine($"{txtSenha.Text}");
-                        escreveSenhas.Close();
-                    }
-                    catch
-                    {
-                        throw new ArgumentOutOfRangeException();
-                    }
-                    escreveSenhas.Close();
+                        StreamWriter escreveSenhasComum = new StreamWriter(@"C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/Comum/SenhasComum.txt", true);
+                        try
+                        {
+                            escreveSenhasComum.WriteLine($"{txtSenha.Text}");
+                        }
+                        catch
+                        {
+                            throw new ArgumentOutOfRangeException();
+                        }
+                        escreveSenhasComum.Close();
 
-                    StreamWriter escreveNomeCompleto = new StreamWriter(@"C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/Comum/NomesComum.txt", true);
-                    try
-                    {
-                        escreveNomeCompleto.WriteLine($"{txtNome.Text} {txtSobrenome.Text}");
+                        StreamWriter escreveNomeCompletoComum = new StreamWriter(@"C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/Comum/NomesComum.txt", true);
+                        try
+                        {
+                            escreveNomeCompletoComum.WriteLine($"{txtNome.Text} {txtSobrenome.Text}");
+                        }
+                        catch
+                        {
+                            throw new ArgumentOutOfRangeException();
+                        }
+                        escreveNomeCompletoComum.Close();
+                        MessageBox.Show("Cadastro efetuado com Sucesso", "Muito bem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                        TelaLogin AbreTelaLogin = new TelaLogin();
+                        AbreTelaLogin.Show();
                     }
-                    catch
+                    else
                     {
-                        throw new ArgumentOutOfRangeException();
+                        MessageBox.Show("Email já cadastrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    escreveNomeCompleto.Close();
-                    MessageBox.Show("Cadastro efetuado com Sucesso");
-                    this.Close();
-                    TelaLogin AbreTelaLogin = new TelaLogin();
-                    AbreTelaLogin.Show();
                 }
             }
-       
-
         }
+        public void RetornaAcesso()
+        {
+            var lerLinhasEmailADM = File.ReadAllLines("C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/ADM/EmailsADM.txt");
+            var lerLinhasEmailComum = File.ReadAllLines("C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/Comum/EmailsComum.txt");
+            if (lerLinhasEmailADM.Contains(txtEmail.Text))
+            {
+                this.NivelAcesso = "ADM";
+            }
+            else if (lerLinhasEmailComum.Contains(txtEmail.Text))
+            {
+                this.NivelAcesso = "Comum";
+            }
+        }
+        public string NivelAcesso { get; set; }
 
         private void radPersonalizado_CheckedChanged(object sender, EventArgs e)
         {

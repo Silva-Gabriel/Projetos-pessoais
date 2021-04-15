@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Runtime.InteropServices;
 
 namespace ProjetoLogin
 {
@@ -16,8 +17,21 @@ namespace ProjetoLogin
         public TelaLogin()
         {
             InitializeComponent();
+            List<TextBox> txtList = new List<TextBox>() { txtEmail,txtSenha };
+            List<string> descList = new List<string>() { "Email", "Senha" };
+            SetCueBanner(ref txtList, descList);
         }
 
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]
+        private static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr i, string str);
+
+        void SetCueBanner(ref List<TextBox> txts, List<string> description)
+        {
+            for (int i = 0; i < txts.Count; i++)
+            {
+                SendMessage(txts[i].Handle, 0x1501, (IntPtr)1, description[i]);
+            }
+        }
         private void CriarConta_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             TelaCadastro exibeTelaCadastro = new TelaCadastro();
@@ -25,7 +39,9 @@ namespace ProjetoLogin
             exibeTelaCadastro.Show();
             this.Hide();
         }
-
+        string NomeUserADM = "";
+        string nivel = "";
+        string user = "";
         private void BotaoAutenticar_Click(object sender, EventArgs e)
         {
             int posicao;
@@ -54,11 +70,12 @@ namespace ProjetoLogin
                             {
                                 if (lerLinhasSenhaADM[posicao] == txtSenha.Text)
                                 {
+                                    NomeUserADM = lerNomeUsuarioADM[posicao];
                                     this.Hide();
-                                    txtEmail = null;
-                                    txtSenha = null;
                                     MessageBox.Show($"Olá {lerNomeUsuarioADM[posicao]}");
-                                    InterfaceADM AbrirInterfaceADM = new InterfaceADM();
+                                    user = NomeUserADM;
+                                    nivel = "Administrador";
+                                    InterfaceADM AbrirInterfaceADM = new InterfaceADM(user,nivel);
                                     AbrirInterfaceADM.Show();
                                 }
                             }
@@ -79,7 +96,13 @@ namespace ProjetoLogin
                             {
                                 if (lerLinhasSenhaComum[posicao] == txtSenha.Text)
                                 {
-                                    MessageBox.Show($"Olá {lerNomeUsuarioComum[posicao]}");
+                                    NomeUserADM = lerNomeUsuarioComum[posicao];
+                                    this.Hide();
+                                    MessageBox.Show($"Olá usuário comum {lerNomeUsuarioComum[posicao]}");
+                                    user = NomeUserADM;
+                                    nivel = "Usuário Comum";
+                                    InterfaceADM AbrirInterfaceADM = new InterfaceADM(user, nivel);
+                                    AbrirInterfaceADM.Show();
                                 }
                             }
                         }
@@ -92,19 +115,19 @@ namespace ProjetoLogin
                 else 
                 {
                     MessageBox.Show("Usuário ou senha incorreto(s)");
-                }
-                
+                } 
             }
+        }
+        public void RetornaUsuario()
+        {
+            InterfaceADM retornandoUsuario = new InterfaceADM(user, nivel);
+            retornandoUsuario.Usuario = user;
+            retornandoUsuario.NivelAcesso = nivel;
+        }
 
-
-
-
-
-
-
-
-
-
+        private void TelaLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

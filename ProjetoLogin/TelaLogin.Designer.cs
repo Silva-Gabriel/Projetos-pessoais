@@ -31,8 +31,6 @@ namespace ProjetoLogin
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaLogin));
             this.panellogin = new System.Windows.Forms.Panel();
-            this.lblSenha = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.BotaoAutenticar = new System.Windows.Forms.Button();
@@ -51,58 +49,33 @@ namespace ProjetoLogin
             // panellogin
             // 
             this.panellogin.BackColor = System.Drawing.Color.Transparent;
-            this.panellogin.Controls.Add(this.lblSenha);
-            this.panellogin.Controls.Add(this.lblEmail);
             this.panellogin.Controls.Add(this.txtSenha);
             this.panellogin.Controls.Add(this.txtEmail);
-            this.panellogin.Location = new System.Drawing.Point(286, 133);
+            this.panellogin.Location = new System.Drawing.Point(317, 175);
             this.panellogin.Name = "panellogin";
-            this.panellogin.Size = new System.Drawing.Size(400, 148);
+            this.panellogin.Size = new System.Drawing.Size(323, 136);
             this.panellogin.TabIndex = 6;
-            // 
-            // lblSenha
-            // 
-            this.lblSenha.AutoSize = true;
-            this.lblSenha.Font = new System.Drawing.Font("Arial", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSenha.ForeColor = System.Drawing.Color.Yellow;
-            this.lblSenha.Location = new System.Drawing.Point(3, 104);
-            this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(92, 28);
-            this.lblSenha.TabIndex = 1;
-            this.lblSenha.Text = "Senha:";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Arial", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.ForeColor = System.Drawing.Color.Yellow;
-            this.lblEmail.Location = new System.Drawing.Point(11, 21);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(84, 28);
-            this.lblEmail.TabIndex = 1;
-            this.lblEmail.Text = "Email:";
             // 
             // txtSenha
             // 
-            this.txtSenha.BackColor = System.Drawing.SystemColors.Info;
-            this.txtSenha.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(101, 97);
-            this.txtSenha.Multiline = true;
+            this.txtSenha.BackColor = System.Drawing.Color.White;
+            this.txtSenha.Font = new System.Drawing.Font("Snap ITC", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha.Location = new System.Drawing.Point(23, 84);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(278, 35);
-            this.txtSenha.TabIndex = 1;
+            this.txtSenha.Size = new System.Drawing.Size(278, 34);
+            this.txtSenha.TabIndex = 2;
             this.txtSenha.Tag = "";
             // 
             // txtEmail
             // 
-            this.txtEmail.BackColor = System.Drawing.SystemColors.Info;
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(101, 13);
-            this.txtEmail.Multiline = true;
+            this.txtEmail.BackColor = System.Drawing.Color.White;
+            this.txtEmail.Font = new System.Drawing.Font("Snap ITC", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.ForeColor = System.Drawing.Color.Black;
+            this.txtEmail.Location = new System.Drawing.Point(23, 21);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(278, 36);
-            this.txtEmail.TabIndex = 0;
+            this.txtEmail.Size = new System.Drawing.Size(278, 34);
+            this.txtEmail.TabIndex = 1;
             // 
             // BotaoAutenticar
             // 
@@ -110,9 +83,9 @@ namespace ProjetoLogin
             this.BotaoAutenticar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BotaoAutenticar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BotaoAutenticar.ForeColor = System.Drawing.Color.White;
-            this.BotaoAutenticar.Location = new System.Drawing.Point(38, 13);
+            this.BotaoAutenticar.Location = new System.Drawing.Point(23, 3);
             this.BotaoAutenticar.Name = "BotaoAutenticar";
-            this.BotaoAutenticar.Size = new System.Drawing.Size(110, 47);
+            this.BotaoAutenticar.Size = new System.Drawing.Size(278, 47);
             this.BotaoAutenticar.TabIndex = 2;
             this.BotaoAutenticar.Text = "Entrar";
             this.BotaoAutenticar.UseVisualStyleBackColor = false;
@@ -123,9 +96,9 @@ namespace ProjetoLogin
             this.panelCriarConta.BackColor = System.Drawing.Color.Transparent;
             this.panelCriarConta.Controls.Add(this.CriarConta);
             this.panelCriarConta.Controls.Add(this.lblCadastro);
-            this.panelCriarConta.Location = new System.Drawing.Point(344, 409);
+            this.panelCriarConta.Location = new System.Drawing.Point(317, 407);
             this.panelCriarConta.Name = "panelCriarConta";
-            this.panelCriarConta.Size = new System.Drawing.Size(342, 46);
+            this.panelCriarConta.Size = new System.Drawing.Size(319, 46);
             this.panelCriarConta.TabIndex = 8;
             // 
             // CriarConta
@@ -161,7 +134,7 @@ namespace ProjetoLogin
             this.lblBoasVindas.BackColor = System.Drawing.Color.Transparent;
             this.lblBoasVindas.Font = new System.Drawing.Font("Algerian", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBoasVindas.ForeColor = System.Drawing.Color.White;
-            this.lblBoasVindas.Location = new System.Drawing.Point(161, 35);
+            this.lblBoasVindas.Location = new System.Drawing.Point(150, 66);
             this.lblBoasVindas.Name = "lblBoasVindas";
             this.lblBoasVindas.Size = new System.Drawing.Size(365, 41);
             this.lblBoasVindas.TabIndex = 4;
@@ -171,9 +144,9 @@ namespace ProjetoLogin
             // 
             this.panelAutentica.BackColor = System.Drawing.Color.Transparent;
             this.panelAutentica.Controls.Add(this.BotaoAutenticar);
-            this.panelAutentica.Location = new System.Drawing.Point(425, 304);
+            this.panelAutentica.Location = new System.Drawing.Point(317, 317);
             this.panelAutentica.Name = "panelAutentica";
-            this.panelAutentica.Size = new System.Drawing.Size(179, 73);
+            this.panelAutentica.Size = new System.Drawing.Size(323, 61);
             this.panelAutentica.TabIndex = 7;
             // 
             // pictureBox1
@@ -181,9 +154,9 @@ namespace ProjetoLogin
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::ProjetoLogin.Properties.Resources.unnamed;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 260);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 250);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(280, 215);
+            this.pictureBox1.Size = new System.Drawing.Size(308, 225);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
@@ -193,7 +166,7 @@ namespace ProjetoLogin
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProjetoLogin.Properties.Resources.gamer;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(740, 478);
+            this.ClientSize = new System.Drawing.Size(648, 478);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelAutentica);
             this.Controls.Add(this.lblBoasVindas);
@@ -203,6 +176,7 @@ namespace ProjetoLogin
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TelaLogin";
             this.Text = "Login screen";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TelaLogin_FormClosing);
             this.panellogin.ResumeLayout(false);
             this.panellogin.PerformLayout();
             this.panelCriarConta.ResumeLayout(false);
@@ -219,8 +193,6 @@ namespace ProjetoLogin
         private System.Windows.Forms.Panel panellogin;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Label lblSenha;
-        private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Button BotaoAutenticar;
         private System.Windows.Forms.Panel panelCriarConta;
         private System.Windows.Forms.LinkLabel CriarConta;
