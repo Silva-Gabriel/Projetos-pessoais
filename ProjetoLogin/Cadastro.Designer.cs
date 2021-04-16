@@ -29,6 +29,7 @@ namespace ProjetoLogin
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaCadastro));
             this.lblCadastro = new System.Windows.Forms.Label();
             this.DataNascimento = new System.Windows.Forms.DateTimePicker();
             this.lblDataNascimento = new System.Windows.Forms.Label();
@@ -52,7 +53,7 @@ namespace ProjetoLogin
             this.lblCadastro.BackColor = System.Drawing.Color.Transparent;
             this.lblCadastro.Font = new System.Drawing.Font("Bernard MT Condensed", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCadastro.ForeColor = System.Drawing.Color.Red;
-            this.lblCadastro.Location = new System.Drawing.Point(84, 24);
+            this.lblCadastro.Location = new System.Drawing.Point(84, 9);
             this.lblCadastro.Name = "lblCadastro";
             this.lblCadastro.Size = new System.Drawing.Size(188, 38);
             this.lblCadastro.TabIndex = 0;
@@ -61,9 +62,9 @@ namespace ProjetoLogin
             // DataNascimento
             // 
             this.DataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DataNascimento.Location = new System.Drawing.Point(206, 226);
+            this.DataNascimento.Location = new System.Drawing.Point(197, 211);
             this.DataNascimento.Name = "DataNascimento";
-            this.DataNascimento.Size = new System.Drawing.Size(103, 20);
+            this.DataNascimento.Size = new System.Drawing.Size(102, 20);
             this.DataNascimento.TabIndex = 3;
             this.DataNascimento.Value = new System.DateTime(2021, 4, 11, 0, 0, 0, 0);
             // 
@@ -73,7 +74,7 @@ namespace ProjetoLogin
             this.lblDataNascimento.BackColor = System.Drawing.Color.Transparent;
             this.lblDataNascimento.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDataNascimento.ForeColor = System.Drawing.Color.White;
-            this.lblDataNascimento.Location = new System.Drawing.Point(5, 221);
+            this.lblDataNascimento.Location = new System.Drawing.Point(5, 206);
             this.lblDataNascimento.Name = "lblDataNascimento";
             this.lblDataNascimento.Size = new System.Drawing.Size(186, 25);
             this.lblDataNascimento.TabIndex = 4;
@@ -85,7 +86,7 @@ namespace ProjetoLogin
             this.lblGenero.BackColor = System.Drawing.Color.Transparent;
             this.lblGenero.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGenero.ForeColor = System.Drawing.Color.White;
-            this.lblGenero.Location = new System.Drawing.Point(5, 265);
+            this.lblGenero.Location = new System.Drawing.Point(5, 243);
             this.lblGenero.Name = "lblGenero";
             this.lblGenero.Size = new System.Drawing.Size(80, 25);
             this.lblGenero.TabIndex = 5;
@@ -95,7 +96,7 @@ namespace ProjetoLogin
             // 
             this.radMasculino.AutoSize = true;
             this.radMasculino.BackColor = System.Drawing.Color.Transparent;
-            this.radMasculino.Location = new System.Drawing.Point(91, 273);
+            this.radMasculino.Location = new System.Drawing.Point(91, 251);
             this.radMasculino.Name = "radMasculino";
             this.radMasculino.Size = new System.Drawing.Size(73, 17);
             this.radMasculino.TabIndex = 6;
@@ -108,7 +109,7 @@ namespace ProjetoLogin
             // 
             this.radFeminino.AutoSize = true;
             this.radFeminino.BackColor = System.Drawing.Color.Transparent;
-            this.radFeminino.Location = new System.Drawing.Point(232, 273);
+            this.radFeminino.Location = new System.Drawing.Point(232, 251);
             this.radFeminino.Name = "radFeminino";
             this.radFeminino.Size = new System.Drawing.Size(67, 17);
             this.radFeminino.TabIndex = 7;
@@ -121,7 +122,7 @@ namespace ProjetoLogin
             // 
             this.radPersonalizado.AutoSize = true;
             this.radPersonalizado.BackColor = System.Drawing.Color.Transparent;
-            this.radPersonalizado.Location = new System.Drawing.Point(91, 308);
+            this.radPersonalizado.Location = new System.Drawing.Point(73, 283);
             this.radPersonalizado.Name = "radPersonalizado";
             this.radPersonalizado.Size = new System.Drawing.Size(91, 17);
             this.radPersonalizado.TabIndex = 8;
@@ -133,44 +134,44 @@ namespace ProjetoLogin
             // txtGeneroPerso
             // 
             this.txtGeneroPerso.Font = new System.Drawing.Font("Snap ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGeneroPerso.Location = new System.Drawing.Point(188, 305);
+            this.txtGeneroPerso.Location = new System.Drawing.Point(170, 276);
             this.txtGeneroPerso.Name = "txtGeneroPerso";
-            this.txtGeneroPerso.Size = new System.Drawing.Size(138, 24);
+            this.txtGeneroPerso.Size = new System.Drawing.Size(129, 24);
             this.txtGeneroPerso.TabIndex = 9;
             this.txtGeneroPerso.Visible = false;
             // 
             // txtNome
             // 
             this.txtNome.Font = new System.Drawing.Font("Snap ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(10, 85);
+            this.txtNome.Location = new System.Drawing.Point(10, 73);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(154, 24);
+            this.txtNome.Size = new System.Drawing.Size(140, 24);
             this.txtNome.TabIndex = 10;
             // 
             // txtSobrenome
             // 
             this.txtSobrenome.Font = new System.Drawing.Font("Snap ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSobrenome.Location = new System.Drawing.Point(179, 85);
+            this.txtSobrenome.Location = new System.Drawing.Point(158, 73);
             this.txtSobrenome.Name = "txtSobrenome";
-            this.txtSobrenome.Size = new System.Drawing.Size(150, 24);
+            this.txtSobrenome.Size = new System.Drawing.Size(141, 24);
             this.txtSobrenome.TabIndex = 11;
             this.txtSobrenome.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Snap ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(10, 137);
+            this.txtEmail.Location = new System.Drawing.Point(10, 122);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(316, 24);
+            this.txtEmail.Size = new System.Drawing.Size(289, 24);
             this.txtEmail.TabIndex = 12;
             // 
             // txtSenha
             // 
             this.txtSenha.Font = new System.Drawing.Font("Snap ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(10, 186);
+            this.txtSenha.Location = new System.Drawing.Point(10, 166);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(316, 24);
+            this.txtSenha.Size = new System.Drawing.Size(289, 24);
             this.txtSenha.TabIndex = 13;
             // 
             // lblCodigoADM
@@ -179,7 +180,7 @@ namespace ProjetoLogin
             this.lblCodigoADM.BackColor = System.Drawing.Color.Transparent;
             this.lblCodigoADM.Font = new System.Drawing.Font("Arial Narrow", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCodigoADM.ForeColor = System.Drawing.Color.White;
-            this.lblCodigoADM.Location = new System.Drawing.Point(5, 367);
+            this.lblCodigoADM.Location = new System.Drawing.Point(5, 325);
             this.lblCodigoADM.Name = "lblCodigoADM";
             this.lblCodigoADM.Size = new System.Drawing.Size(122, 25);
             this.lblCodigoADM.TabIndex = 14;
@@ -188,7 +189,7 @@ namespace ProjetoLogin
             // txtCodigoADM
             // 
             this.txtCodigoADM.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigoADM.Location = new System.Drawing.Point(133, 372);
+            this.txtCodigoADM.Location = new System.Drawing.Point(133, 326);
             this.txtCodigoADM.Name = "txtCodigoADM";
             this.txtCodigoADM.Size = new System.Drawing.Size(58, 26);
             this.txtCodigoADM.TabIndex = 15;
@@ -200,7 +201,7 @@ namespace ProjetoLogin
             this.BotaoCadastrar.BackColor = System.Drawing.Color.Gray;
             this.BotaoCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BotaoCadastrar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BotaoCadastrar.Location = new System.Drawing.Point(232, 354);
+            this.BotaoCadastrar.Location = new System.Drawing.Point(219, 316);
             this.BotaoCadastrar.Name = "BotaoCadastrar";
             this.BotaoCadastrar.Size = new System.Drawing.Size(97, 54);
             this.BotaoCadastrar.TabIndex = 16;
@@ -214,7 +215,7 @@ namespace ProjetoLogin
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProjetoLogin.Properties.Resources.TI;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(355, 418);
+            this.ClientSize = new System.Drawing.Size(328, 382);
             this.Controls.Add(this.BotaoCadastrar);
             this.Controls.Add(this.txtCodigoADM);
             this.Controls.Add(this.lblCodigoADM);
@@ -231,7 +232,9 @@ namespace ProjetoLogin
             this.Controls.Add(this.DataNascimento);
             this.Controls.Add(this.lblCadastro);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TelaCadastro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tela de Cadastro";
             this.ResumeLayout(false);
             this.PerformLayout();

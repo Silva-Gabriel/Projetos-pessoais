@@ -49,30 +49,30 @@ namespace ProjetoLogin
             if (txtEmail.Text != "" && txtSenha.Text != "")
             {
                 //Transforma os textos dos arquivos em arrays de strings
-                var lerLinhasEmailADM = File.ReadAllLines("C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/ADM/EmailsADM.txt");
-                var lerLinhasEmailComum = File.ReadAllLines("C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/Comum/EmailsComum.txt");
-                var lerLinhasSenhaADM = File.ReadAllLines("C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/ADM/SenhasADM.txt");
-                var lerLinhasSenhaComum = File.ReadAllLines("C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/Comum/SenhasComum.txt");
-                var lerNomeUsuarioADM = File.ReadAllLines("C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/ADM/NomesADM.txt");
-                var lerNomeUsuarioComum = File.ReadAllLines("C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/Comum/NomesComum.txt");
-
-                txtSenha.PasswordChar = '\u0000';
-                //linhaArrayEmailADM, linhaArraySenhaADM;
-
+                //Lê o arquivo .txt e retorna uma lista que pode ser acessada por index
+                //Emails
+                var lerLinhasEmailComum = File.ReadAllLines("BD/EmailsComum.txt");
+                var lerLinhasEmailADM = File.ReadAllLines("BD/EmailsADM.txt");
+                //Senhas
+                var lerLinhasSenhasComum = File.ReadAllLines("BD/SenhasComum.txt");
+                var lerLinhasSenhasADM = File.ReadAllLines("BD/SenhasADM.txt");
+                //Nomes
+                var lerLinhasNomesComum = File.ReadAllLines("BD/NomesComum.txt");
+                var lerLinhasNomesADM = File.ReadAllLines("BD/NomesADM.txt");
 
                 if (lerLinhasEmailADM.Contains(txtEmail.Text) == true)
                 {
-                    if (lerLinhasSenhaADM.Contains(txtSenha.Text) == true)
+                    if (lerLinhasSenhasADM.Contains(txtSenha.Text) == true)
                     {
                         for (posicao = 0; posicao < lerLinhasEmailADM.Count(); posicao++)
                         {
                             if (lerLinhasEmailADM[posicao] == txtEmail.Text)
                             {
-                                if (lerLinhasSenhaADM[posicao] == txtSenha.Text)
+                                if (lerLinhasSenhasADM[posicao] == txtSenha.Text)
                                 {
-                                    NomeUserADM = lerNomeUsuarioADM[posicao];
+                                    NomeUserADM = lerLinhasNomesADM[posicao];
                                     this.Hide();
-                                    MessageBox.Show($"Olá {lerNomeUsuarioADM[posicao]}");
+                                    MessageBox.Show($"Olá mestre {lerLinhasNomesADM[posicao]}","Boas-vindas");
                                     user = NomeUserADM;
                                     nivel = "Administrador";
                                     InterfaceADM AbrirInterfaceADM = new InterfaceADM(user,nivel);
@@ -88,17 +88,17 @@ namespace ProjetoLogin
                 }
                 else if (lerLinhasEmailComum.Contains(txtEmail.Text) == true)
                 {
-                    if (lerLinhasSenhaComum.Contains(txtSenha.Text) == true)
+                    if (lerLinhasSenhasComum.Contains(txtSenha.Text) == true)
                     {
                         for (posicao = 0; posicao < lerLinhasEmailComum.Count(); posicao++)
                         {
                             if (lerLinhasEmailComum[posicao] == txtEmail.Text)
                             {
-                                if (lerLinhasSenhaComum[posicao] == txtSenha.Text)
+                                if (lerLinhasSenhasComum[posicao] == txtSenha.Text)
                                 {
-                                    NomeUserADM = lerNomeUsuarioComum[posicao];
+                                    NomeUserADM = lerLinhasNomesComum[posicao];
                                     this.Hide();
-                                    MessageBox.Show($"Olá usuário comum {lerNomeUsuarioComum[posicao]}");
+                                    MessageBox.Show($"Olá usuário {lerLinhasNomesComum[posicao]},seja bem-vindo ao GBX","Boas-vindas");
                                     user = NomeUserADM;
                                     nivel = "Usuário Comum";
                                     InterfaceADM AbrirInterfaceADM = new InterfaceADM(user, nivel);
@@ -128,6 +128,18 @@ namespace ProjetoLogin
         private void TelaLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void cBoxMostrarSenha_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cBoxMostrarSenha.Checked)
+            {
+                txtSenha.PasswordChar = '\u0000';
+            }
+            else 
+            {
+                txtSenha.PasswordChar = Convert.ToChar("*");
+            }
         }
     }
 }

@@ -53,12 +53,16 @@ namespace ProjetoLogin
         string Usuario = "";
         private void BotaoCadastrar_Click(object sender, EventArgs e)
         {
-            var lerLinhasEmailComum = File.ReadAllLines("C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/Comum/EmailsComum.txt");
-            var lerLinhasEmailADM = File.ReadAllLines("C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/ADM/EmailsADM.txt");
-            var lerSenhasComum = File.ReadAllLines("C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/Comum/SenhasComum.txt");
-            var lerSenhasADM = File.ReadAllLines("C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/ADM/SenhasADM.txt");
-            var lerNomesComum = File.ReadAllLines("C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/ADM/NomesADM.txt");
-            var lerNomesADM = File.ReadAllLines("C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/Comum/NomesComum.txt");
+            //Lê o arquivo .txt e retorna uma lista que pode ser acessada por index
+            //Emails
+            var lerLinhasEmailComum = File.ReadAllLines("BD/EmailsComum.txt");
+            var lerLinhasEmailADM = File.ReadAllLines("BD/EmailsADM.txt");
+            //Senhas
+            var lerSenhasComum = File.ReadAllLines("BD/SenhasComum.txt");
+            var lerSenhasADM = File.ReadAllLines("BD/SenhasADM.txt");
+            //Nomes
+            var lerNomesComum = File.ReadAllLines("BD/NomesComum.txt");
+            var lerNomesADM = File.ReadAllLines("BD/NomesADM.txt");
 
             //Avisos de campos não preenchidos
             if (txtNome.Text == "")
@@ -125,7 +129,7 @@ namespace ProjetoLogin
                 {
                     if (!(lerLinhasEmailADM.Contains(txtEmail.Text)) && !(lerLinhasEmailADM.Contains(txtEmail.Text)))
                     {
-                        StreamWriter escreveEmailsADM = new StreamWriter(@"C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/ADM/EmailsADM.txt", true);
+                        StreamWriter escreveEmailsADM = new StreamWriter(@"BD/EmailsADM.txt", true);
                         try
                         {
                           escreveEmailsADM.WriteLine($"{txtEmail.Text}");
@@ -136,7 +140,7 @@ namespace ProjetoLogin
                         }
                         escreveEmailsADM.Close();
 
-                        StreamWriter escreveSenhasADM = new StreamWriter(@"C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/ADM/SenhasADM.txt", true);
+                        StreamWriter escreveSenhasADM = new StreamWriter(@"BD/SenhasADM.txt", true);
                         try
                         {
                             escreveSenhasADM.WriteLine($"{txtSenha.Text}");
@@ -148,7 +152,7 @@ namespace ProjetoLogin
                         }
                         escreveSenhasADM.Close();
 
-                        StreamWriter escreveNomeCompletoADM = new StreamWriter(@"C:\WorkSpace\Projetos-pessoais\ProjetoLogin\BDtxt\ADM\NomesADM.txt", true);
+                        StreamWriter escreveNomeCompletoADM = new StreamWriter(@"BD/NomesADM.txt", true);
                         try
                         {
                             escreveNomeCompletoADM.WriteLine($"{txtNome.Text} {txtSobrenome.Text}");
@@ -173,7 +177,7 @@ namespace ProjetoLogin
                 {
                     if (!(lerLinhasEmailComum.Contains(txtEmail.Text)) && !(lerLinhasEmailADM.Contains(txtEmail.Text)))
                     {
-                        StreamWriter escreveEmailsComum = new StreamWriter(@"C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/Comum/EmailsComum.txt", true);
+                        StreamWriter escreveEmailsComum = new StreamWriter(@"BD/EmailsComum.txt", true);
                         try
                         {
                             escreveEmailsComum.WriteLine($"{txtEmail.Text}");
@@ -184,7 +188,7 @@ namespace ProjetoLogin
                         }
                         escreveEmailsComum.Close();
 
-                        StreamWriter escreveSenhasComum = new StreamWriter(@"C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/Comum/SenhasComum.txt", true);
+                        StreamWriter escreveSenhasComum = new StreamWriter(@"BD/SenhasComum.txt", true);
                         try
                         {
                             escreveSenhasComum.WriteLine($"{txtSenha.Text}");
@@ -195,7 +199,7 @@ namespace ProjetoLogin
                         }
                         escreveSenhasComum.Close();
 
-                        StreamWriter escreveNomeCompletoComum = new StreamWriter(@"C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/Comum/NomesComum.txt", true);
+                        StreamWriter escreveNomeCompletoComum = new StreamWriter(@"BD/NomesComum.txt", true);
                         try
                         {
                             escreveNomeCompletoComum.WriteLine($"{txtNome.Text} {txtSobrenome.Text}");
@@ -219,8 +223,8 @@ namespace ProjetoLogin
         }
         public void RetornaAcesso()
         {
-            var lerLinhasEmailADM = File.ReadAllLines("C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/ADM/EmailsADM.txt");
-            var lerLinhasEmailComum = File.ReadAllLines("C:/WorkSpace/Projetos-pessoais/ProjetoLogin/BDtxt/Comum/EmailsComum.txt");
+            var lerLinhasEmailADM = File.ReadAllLines("../EmailsADM.txt");
+            var lerLinhasEmailComum = File.ReadAllLines("../EmailsComum.txt");
             if (lerLinhasEmailADM.Contains(txtEmail.Text))
             {
                 this.NivelAcesso = "ADM";
