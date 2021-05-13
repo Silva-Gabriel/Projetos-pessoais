@@ -1,0 +1,47 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    background: -webkit-linear-gradient(to right, #aaa, black);
+    background:linear-gradient(to right, black,#aaa);
+}
+.carousel-inner img
+{
+   padding-bottom:80px;
+}
+nav a
+{
+    text-decoration: none;
+    margin-left:50px;
+    color:#fff;
+}
+
+nav a:hover
+{
+    color:red;
+}
+
+.menu
+{
+   margin-left:50px;
+   font-size:20px;
+}
+img
+{   
+   
+    height: 640px !important;
+    margin-bottom:110px; 
+}
+
+.logoNetflix{
+    height: 40px !important;
+    width:115px;
+    margin:18px;
+}
+p
+{
+    font-size:16px;
+}
