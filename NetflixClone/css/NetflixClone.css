@@ -86,7 +86,7 @@ header nav a:hover
 {
     display: inline-block;
     align-items: center;
-    margin-left: 4%;
+    margin-left: 100px;
 }
 
 .logoNetflix
@@ -97,7 +97,7 @@ header nav a:hover
 .container-menu
 {
     position:relative;
-    bottom:120px;
+    bottom:100px;
     right:25px;
 }
 
