@@ -1,0 +1,59 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    background: -webkit-linear-gradient(to right, #fff, rgb(129, 10, 30),rgba(0, 0, 0, 0));
+    background:linear-gradient(to right, #fff, rgb(131, 9, 25),rgba(0, 0, 0, 0));
+}
+
+nav a
+{
+    text-decoration: none;
+    margin-left:50px;
+    color:#fff;
+}
+
+nav a:hover
+{
+    transition: 0.5s;
+    color:#000;
+}
+
+.menu
+{
+   margin-left:50px;
+   font-size:20px;
+}
+img
+{   
+    display: inline-block;
+    justify-content: center;
+    height: 560px;
+}
+img:hover{
+    transition: 1s;
+    filter:opacity(55%);
+}
+
+.logoNetflix{
+    height: 45px !important;
+    width:120px;
+    margin:18px;
+    padding:0px;
+}
+p
+{
+    color:white;
+    font-size:18px;
+    padding-bottom:50px;
+    
+}
+#titulo
+{
+    color:white;
+    font-family:fantasy,Arial;
+}

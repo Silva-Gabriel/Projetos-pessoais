@@ -6,12 +6,8 @@ html, body {
 }
 body
 {
-    background: -webkit-linear-gradient(to right, black, rgb(88, 170, 129),rgb(49, 51, 179));
-    background:linear-gradient(to right, black, rgb(76, 175, 125),rgb(41, 43, 196));
-}
-.carousel-inner img
-{
-   padding-bottom:80px;
+    background: -webkit-linear-gradient(to right, black, #fff),rgb(49, 51, 179);
+    background:linear-gradient(to right, black, #fff ,rgb(49, 51, 179));
 }
 nav a
 {
@@ -22,7 +18,8 @@ nav a
 
 nav a:hover
 {
-    color:#aaa;
+    color:#000;
+    transition: 0.5s;
 }
 
 .menu
@@ -34,28 +31,28 @@ img
 {   
     display: inline-block;
     justify-content: center;
-    height: 670px;
-    margin-bottom:140px; 
-    padding:0px 0px 200px 0px;
+    height: 560px;
+}
+img:hover{
+    transition: 1s;
+    filter:brightness(60%);
 }
 
-
 .logoNetflix{
-    height: 40px !important;
-    width:115px;
+    height: 45px !important;
+    width:120px;
     margin:18px;
     padding:0px;
 }
 p
 {
+    color:white;
     font-size:18px;
-    margin-top:6px;
+    padding-bottom:50px;
     
 }
 #titulo
 {
+    color:white;
     font-family:fantasy,Arial;
-    display:inline-block;
-    margin-bottom:14px;
-    margin-top:6px;
 }
