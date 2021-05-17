@@ -1,0 +1,21 @@
+body
+{
+    background-image:linear-gradient(rgba(0,0,0,.40),rgba(0,0,0,.40)),url(img/slytherinbackground.jpg);
+    background-size: cover;
+    filter: opacity(42%);
+    height: 95vh;
+    width:95;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.reiniciar
+{
+    position:relative;
+    top:290px;
+    right:340px;
+}
+canvas
+{
+    margin-left:180px;
+}
